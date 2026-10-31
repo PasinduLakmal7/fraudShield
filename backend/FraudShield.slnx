@@ -1,0 +1,49 @@
+<Solution>
+  <Folder Name="/building-blocks/">
+    <Project Path="building-blocks/FraudShield.Contracts/FraudShield.Contracts.csproj" />
+    <Project Path="building-blocks/FraudShield.Observability/FraudShield.Observability.csproj" />
+    <Project Path="building-blocks/FraudShield.ServiceDefaults/FraudShield.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/gateway/">
+    <Project Path="gateway/FraudShield.ApiGateway/FraudShield.ApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/services/" />
+  <Folder Name="/services/AlertService/">
+    <Project Path="services/AlertService/Alert.API/Alert.API.csproj" />
+    <Project Path="services/AlertService/Alert.Application/Alert.Application.csproj" />
+    <Project Path="services/AlertService/Alert.Domain/Alert.Domain.csproj" />
+    <Project Path="services/AlertService/Alert.Infrastructure/Alert.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/services/CustomerService/">
+    <Project Path="services/CustomerService/Customer.API/Customer.API.csproj" />
+    <Project Path="services/CustomerService/Customer.Application/Customer.Application.csproj" />
+    <Project Path="services/CustomerService/Customer.Domain/Customer.Domain.csproj" />
+    <Project Path="services/CustomerService/Customer.Infrastructure/Customer.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/services/FraudDetectionService/">
+    <Project Path="services/FraudDetectionService/Fraud.API/Fraud.API.csproj" />
+    <Project Path="services/FraudDetectionService/Fraud.Application/Fraud.Application.csproj" />
+    <Project Path="services/FraudDetectionService/Fraud.Domain/Fraud.Domain.csproj" />
+    <Project Path="services/FraudDetectionService/Fraud.Infrastructure/Fraud.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/services/IdentityService/">
+    <Project Path="services/IdentityService/Identity.API/Identity.API.csproj" />
+    <Project Path="services/IdentityService/Identity.Application/Identity.Application.csproj" />
+    <Project Path="services/IdentityService/Identity.Domain/Identity.Domain.csproj" />
+    <Project Path="services/IdentityService/Identity.Infrastructure/Identity.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/services/NotificationService/">
+    <Project Path="services/NotificationService/Notification.Worker/Notification.Worker.csproj" />
+  </Folder>
+  <Folder Name="/services/TransactionService/">
+    <Project Path="services/TransactionService/Transaction.API/Transaction.API.csproj" />
+    <Project Path="services/TransactionService/Transaction.Application/Transaction.Application.csproj" />
+    <Project Path="services/TransactionService/Transaction.Domain/Transaction.Domain.csproj" />
+    <Project Path="services/TransactionService/Transaction.Infrastructure/Transaction.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ContractTests/ContractTests.csproj" />
+    <Project Path="tests/IntegrationTests/IntegrationTests.csproj" />
+    <Project Path="tests/UnitTests/UnitTests.csproj" />
+  </Folder>
+</Solution>

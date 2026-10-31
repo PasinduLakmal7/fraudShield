@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: FraudShield Fraud Detection API
+  version: 1.0.0
+  description: Real-time fraud scoring, rule evaluation, and velocity checks.
+paths:
+  /api/v1/fraud/assess:
+    post:
+      summary: Assess transaction for fraud indicators
+      responses:
+        '200':
+          description: Fraud assessment result
+  /api/v1/fraud/rules:
+    get:
+      summary: Get active fraud detection rules
+      responses:
+        '200':
+          description: List of rules
+

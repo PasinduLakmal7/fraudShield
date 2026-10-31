@@ -1,0 +1,42 @@
+# -----------------------------------------------------------------------------
+# Top-level gitignore for FraudShield
+# -----------------------------------------------------------------------------
+
+# .NET & Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+_ReSharper*/
+*.DotSettings.user
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+.yarn/
+.pnpm-store/
+
+# Environment files
+.env
+.env.*.local
+!.env.example
+
+# Logs and test results
+*.log
+TestResults/
+coverage/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Docker
+docker-compose.override.yml.local
+

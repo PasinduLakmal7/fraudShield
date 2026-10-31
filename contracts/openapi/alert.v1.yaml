@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: FraudShield Alert API
+  version: 1.0.0
+  description: Alert management and investigator case tracking service.
+paths:
+  /api/v1/alerts:
+    get:
+      summary: List fraud alerts
+      responses:
+        '200':
+          description: List of alerts
+  /api/v1/alerts/{id}/status:
+    put:
+      summary: Update alert status
+      responses:
+        '200':
+          description: Alert updated
+

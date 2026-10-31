@@ -1,0 +1,7 @@
+# Local developer overrides for docker-compose
+# Use this file to override ports or mount local volumes for hot reloading if needed.
+services:
+  # Example: mount source code for development:
+  # identity-service:
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development

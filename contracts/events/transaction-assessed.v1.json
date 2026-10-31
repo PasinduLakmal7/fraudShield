@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TransactionAssessedEventV1",
+  "type": "object",
+  "properties": {
+    "eventId": { "type": "string", "format": "uuid" },
+    "transactionId": { "type": "string", "format": "uuid" },
+    "customerId": { "type": "string", "format": "uuid" },
+    "riskScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "decision": { "type": "string", "enum": ["APPROVE", "REVIEW", "REJECT"] },
+    "triggeredRules": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "required": ["eventId", "transactionId", "customerId", "riskScore", "decision", "triggeredRules", "timestamp"]
+}
+

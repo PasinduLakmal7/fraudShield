@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: FraudShield Transaction API
+  version: 1.0.0
+  description: Banking transaction ingestion and lifecycle management service.
+paths:
+  /api/v1/transactions:
+    post:
+      summary: Ingest transaction for processing
+      responses:
+        '202':
+          description: Transaction accepted
+    get:
+      summary: Query transactions
+      responses:
+        '200':
+          description: List of transactions
+

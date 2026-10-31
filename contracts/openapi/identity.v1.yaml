@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: FraudShield Identity API
+  version: 1.0.0
+  description: Authentication and identity management service.
+paths:
+  /api/v1/auth/login:
+    post:
+      summary: User login
+      responses:
+        '200':
+          description: Successful login
+  /api/v1/auth/register:
+    post:
+      summary: User registration
+      responses:
+        '201':
+          description: User created
+

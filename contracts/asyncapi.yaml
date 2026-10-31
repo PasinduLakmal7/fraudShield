@@ -1,0 +1,30 @@
+asyncapi: 2.6.0
+info:
+  title: FraudShield Integration Events
+  version: 1.0.0
+  description: Asynchronous event contracts for FraudShield microservices communication via RabbitMQ.
+channels:
+  fraudshield.customer.status-changed:
+    publish:
+      message:
+        $ref: '#/components/messages/CustomerStatusChanged'
+  fraudshield.transaction.assessed:
+    publish:
+      message:
+        $ref: '#/components/messages/TransactionAssessed'
+  fraudshield.fraud.alert-created:
+    publish:
+      message:
+        $ref: '#/components/messages/FraudAlertCreated'
+components:
+  messages:
+    CustomerStatusChanged:
+      payload:
+        $ref: './events/customer-status-changed.v1.json'
+    TransactionAssessed:
+      payload:
+        $ref: './events/transaction-assessed.v1.json'
+    FraudAlertCreated:
+      payload:
+        $ref: './events/fraud-alert-created.v1.json'
+

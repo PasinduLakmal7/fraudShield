@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alert.Domain\Alert.Domain.csproj" />
+    <ProjectReference Include="..\..\..\building-blocks\FraudShield.Contracts\FraudShield.Contracts.csproj" />
+  </ItemGroup>
+</Project>
