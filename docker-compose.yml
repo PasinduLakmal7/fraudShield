@@ -33,7 +33,7 @@ services:
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
     healthcheck:
-      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -87,6 +87,9 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=fraudshield_identity;Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres_dev_password}
       - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - RabbitMQ__Username=${RABBITMQ_DEFAULT_USER:-fraudshield}
+      - RabbitMQ__Password=${RABBITMQ_DEFAULT_PASS:-fraudshield_dev_pass}
       - Redis__ConnectionString=redis:6379
     ports:
       - "5101:8080"
@@ -108,6 +111,9 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=fraudshield_customer;Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres_dev_password}
       - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - RabbitMQ__Username=${RABBITMQ_DEFAULT_USER:-fraudshield}
+      - RabbitMQ__Password=${RABBITMQ_DEFAULT_PASS:-fraudshield_dev_pass}
     ports:
       - "5102:8080"
     depends_on:
@@ -128,6 +134,9 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=fraudshield_transaction;Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres_dev_password}
       - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - RabbitMQ__Username=${RABBITMQ_DEFAULT_USER:-fraudshield}
+      - RabbitMQ__Password=${RABBITMQ_DEFAULT_PASS:-fraudshield_dev_pass}
     ports:
       - "5103:8080"
     depends_on:
@@ -148,6 +157,9 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=fraudshield_fraud;Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres_dev_password}
       - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - RabbitMQ__Username=${RABBITMQ_DEFAULT_USER:-fraudshield}
+      - RabbitMQ__Password=${RABBITMQ_DEFAULT_PASS:-fraudshield_dev_pass}
       - Redis__ConnectionString=redis:6379
     ports:
       - "5104:8080"
@@ -171,6 +183,9 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=fraudshield_alert;Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres_dev_password}
       - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - RabbitMQ__Username=${RABBITMQ_DEFAULT_USER:-fraudshield}
+      - RabbitMQ__Password=${RABBITMQ_DEFAULT_PASS:-fraudshield_dev_pass}
     ports:
       - "5105:8080"
     depends_on:
@@ -189,6 +204,9 @@ services:
     environment:
       - DOTNET_ENVIRONMENT=Docker
       - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - RabbitMQ__Username=${RABBITMQ_DEFAULT_USER:-fraudshield}
+      - RabbitMQ__Password=${RABBITMQ_DEFAULT_PASS:-fraudshield_dev_pass}
     depends_on:
       rabbitmq:
         condition: service_healthy
